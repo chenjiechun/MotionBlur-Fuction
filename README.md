@@ -23,8 +23,9 @@ We developed a c++ fuction that can be used to create a motion blur kerel. Using
    * opencv_highgui2411.lib
    * opencv_imgproc2411.lib
 8. Include necessary header files in test.cpp.
-<pre><code>#include &ltiostream&lt
+<pre><code>#include &ltiostream&gt
 #include "MotionBlur.h"
+#include &ltatlconv.h&gt
 using namespace std;</code></pre>
 9. Copy following codes to the "_tmain" fuction that is defined in test.cpp.
 <pre><code>Mat m_kernel;	
@@ -39,7 +40,8 @@ if (res < 0)
     printf("create kernel error!\n");
     return -1;
 }
-Mat srcImg = imread(argv[1]);
+USES_CONVERSION;
+Mat srcImg = imread(W2A(argv[1]));
 Mat dstImg;
 filter2D(srcImg, dstImg, -1, m_kernel);
 string window_name = "haha...";
