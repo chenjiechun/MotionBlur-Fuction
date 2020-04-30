@@ -23,7 +23,7 @@ We developed a c++ fuction that can be used to create a motion blur kerel. Using
    * opencv_highgui2411.lib
    * opencv_imgproc2411.lib
 8. Include necessary header files in test.cpp.
-<pre><code>#include \<iostream\>
+<pre><code>#include &ltiostream&lt
 #include "MotionBlur.h"
 using namespace std;</code></pre>
 9. Copy following codes to the "_tmain" fuction that is defined in test.cpp.
