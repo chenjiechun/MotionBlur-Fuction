@@ -27,29 +27,26 @@ We developed a c++ fuction that can be used to create a motion blur kerel. Using
 #include "MotionBlur.h"
 using namespace std;</code></pre>
 9. Copy following codes to the "_tmain" fuction that is defined in test.cpp.
-<pre><code>Mat m_kernel;
-	
-	if (2 != argc)
-	{
-		cout << "usage: blur_test  imagename";
-		return 0;
-	}
-	int res = createMotionBlurKernel(m_kernel, 4, 120);
-	if (res < 0)
-	{
-		printf("create kernel error!\n");
-		return -1;
-	}
-
-	Mat srcImg = imread(argv[1]);
-	Mat dstImg;
-	filter2D(srcImg, dstImg, -1, m_kernel);
-	imwrite("result.jpg", dstImg);
-	string window_name = "haha...";
-	namedWindow(window_name);
-	imshow(window_name, dstImg);
-	waitKey(0);
-	return 0;</code></pre>
+<pre><code>Mat m_kernel;	
+if (2 != argc)
+{
+    cout << "usage: blur_test  imagename";
+    return 0;
+}
+int res = createMotionBlurKernel(m_kernel, 4, 120);
+if (res < 0)
+{
+    printf("create kernel error!\n");
+    return -1;
+}
+Mat srcImg = imread(argv[1]);
+Mat dstImg;
+filter2D(srcImg, dstImg, -1, m_kernel);
+string window_name = "haha...";
+namedWindow(window_name);
+imshow(window_name, dstImg);
+waitKey(0);
+return 0;</code></pre>
 10. Build the "test" project.
 
 
